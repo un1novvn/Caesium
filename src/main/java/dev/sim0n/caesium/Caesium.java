@@ -69,6 +69,9 @@ public class Caesium {
     }
 
     public static Caesium getInstance() {
+        if(instance == null){
+            instance = Optional.of(new Caesium());
+        }
         return instance.orElseThrow(() -> new IllegalStateException("Caesium instance is null"));
     }
 }
